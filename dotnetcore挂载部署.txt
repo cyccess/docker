@@ -1,0 +1,5 @@
+
+
+
+#π“‘ÿ∆Ù∂Ø
+#docker run -itd --name order -p 8801:8801 -v /root/wwwroot/www.cqsnps.vip:/publish  microsoft/aspnetcore:2.0.8 dotnet /publish/Cyc.Order.Web.dll
