@@ -1,0 +1,12 @@
+
+# 修改tag 重新生成images
+docker tag smsservice/cmcc 119.84.60.141:5000/cmcc
+
+#推送到镜像仓库
+docker push  119.84.60.141:5000/cmcc
+
+
+
+
+
+

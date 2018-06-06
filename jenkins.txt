@@ -1,0 +1,6 @@
+
+docker pull jenkins
+
+
+
+sudo docker run -itd -p 8080:8080 -p 50000:50000 --name jenkins --privileged=true  -v /root/jenkins:/var/jenkins_home jenkins

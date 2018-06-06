@@ -1,0 +1,12 @@
+#将容器打包成镜像
+docker commit -a 'Cheng Renping' -m 'order system' da985c9d77a3 ordersystem
+
+
+#Dockerfile 打包镜像
+docker build -t smsservice/cmcc .
+#运行容器实例
+docker run -itd -p  10011:10011 --name smsservice_cmcc smsservice/cmcc
+
+
+#docker tag改名字
+docker tag 2f6e8b859095 cyccess/smsservice-cmcc:latest

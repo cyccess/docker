@@ -1,0 +1,35 @@
+﻿
+
+
+运行安装 Docker
+
+sudo apt-get install -y docker.io
+
+
+启动Docker服务
+
+systemctl start docker
+
+systemctl start docker.service
+
+
+系统引导时启用 docker
+
+systemctl enable docker
+
+
+docker 版本
+
+docker version
+
+
+搜索一个基本 image
+
+docker search ubuntu
+
+
+docker pull ubuntu
+
+
+查看所有已下载的images
+docker images
