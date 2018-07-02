@@ -13,3 +13,5 @@ mysql -u root -p
 
 
 grant all privileges on *.* to 'root'@'%' identified by '111aaa' with grant option; 
+
+flush privileges; 

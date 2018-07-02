@@ -33,3 +33,6 @@ docker pull ubuntu
 
 查看所有已下载的images
 docker images
+
+更改docker容器开机启动
+docker update --restart=always 9121ec908200
