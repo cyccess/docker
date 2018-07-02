@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+sudo docker run -d --restart=unless-stopped -p 8080:8080 rancher/server  \ --db-host localhost --db-port 3306 --db-user cattle --db-pass cattle --db-name cattle
+
+
+firewall-cmd --state
+
+
+systemctl stop firewalld
+
+
+sudo docker run --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/rancher:/var/lib/rancher rancher/agent:v1.2.10 http://192.168.124.130:8080/v1/scripts/C85A2DA24E9388B2ADE2:1514678400000:lfzHg5JgFT2HmuMB8bCLVvtI
