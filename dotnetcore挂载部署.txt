@@ -3,3 +3,13 @@
 
 #π“‘ÿ∆Ù∂Ø
 #docker run -itd --name order -p 8801:8801 -v /root/wwwroot/www.cqsnps.vip:/publish  microsoft/aspnetcore:2.0.8 dotnet /publish/Cyc.Order.Web.dll
+
+
+docker run -itd --name aspnetcore2_1 -p 8802:8802 -v /root/wwwroot/aspnetcore2_1:/publish  microsoft/dotnet:2.1-aspnetcore-runtime dotnet /publish/Cyc.Order.Web.dll 
+
+
+
+docker build -t cqsnps .
+
+
+docker run -itd --name orderweb -p 8802:8802  cqsnps
