@@ -12,4 +12,4 @@ docker run -itd --name aspnetcore2_1 -p 8802:8802 -v /root/wwwroot/aspnetcore2_1
 docker build -t cqsnps .
 
 
-docker run -itd --name orderweb2 -p 8802:8802  cqsnps
+docker run -itd --name orderweb -p 8802:8802 -v /root/wwwroot/aspnetcore2_1:/wwwroot f3ecfca721da
