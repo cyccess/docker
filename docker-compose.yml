@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  orderweb1:
-    image: cqsnps
+  order-web:
+    image: cyccess/cqsnps
     ports:
       - "8802:8802"
     volumes:
@@ -10,7 +10,7 @@ services:
     environment:
       - ASPNETCORE_URLS=http://*:8802
     restart: always
-  cqsnps_web1:
+  cqsnps-web:
     image: nginx
     ports:
       - "80:80"
