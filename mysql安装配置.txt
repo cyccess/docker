@@ -3,6 +3,9 @@
 
 docker run -itd --name order-mysql -e MYSQL_ROOT_PASSWORD=111aaa -p 3306:3306  mysql:5.7
 
+--挂载目录
+docker run -d -p 3306:3306 --privileged=true -v /docker/mysql/conf/my.cnf:/etc/mysql/my.cnf -v /docker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=111aaa --name mysqldb mysql:5.7
+
 
 
 docker exec -it order-mysql bash
@@ -11,7 +14,7 @@ docker exec -it order-mysql bash
 登陆mysql数据库    
 mysql -u root -p
 
-
+-- 实现远程连接
 grant all privileges on *.* to 'root'@'%' identified by '111aaa' with grant option; 
 
 flush privileges; 

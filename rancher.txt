@@ -1,17 +1,12 @@
 
+sudo docker run -d --restart=unless-stopped -p 8080:8080 rancher/server \ --db-host localhost --db-port 3306 --db-user cattle --db-pass cattle --db-name cattle
 
-
-
-
-
-
-sudo docker run -d --restart=unless-stopped -p 8080:8080 rancher/server  \ --db-host localhost --db-port 3306 --db-user cattle --db-pass cattle --db-name cattle
-
+ sudo docker run -d -v /docker/rancher:/var/lib/mysql --privileged=true --restart=unless-stopped -p 8080:8080 rancher/server
 
 firewall-cmd --state
 
-
-systemctl stop firewalld
-
-
-sudo docker run --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/rancher:/var/lib/rancher rancher/agent:v1.2.10 http://192.168.124.130:8080/v1/scripts/C85A2DA24E9388B2ADE2:1514678400000:lfzHg5JgFT2HmuMB8bCLVvtI
+关闭防火墙(后续增加节点需要和主节点端口通讯需要关闭防火墙)
+关闭防火墙命令：systemctl stop firewalld.service
+开启防火墙：systemctl start firewalld.service
+关闭开机自启动：systemctl disable firewalld.service
+开启开机启动：systemctl enable firewalld.service
