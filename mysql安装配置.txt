@@ -10,13 +10,13 @@ docker run --name mysql -d --rm -v c:/docker/mysql/conf:/etc/mysql/conf.d -v c:/
 
 docker exec -it order-mysql bash
 
-docker exec -it mysql mysql -uroot -p123
+docker exec -it mysql mysql -uroot -proot
 
 
 登陆mysql数据库    
 mysql -u root -p
 
 -- 实现远程连接
-grant all privileges on *.* to 'root'@'%' identified by '111aaa' with grant option; 
+grant all privileges on *.* to 'root'@'%' identified by 'root' with grant option; 
 
 flush privileges; 
