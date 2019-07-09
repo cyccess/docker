@@ -1,0 +1,17 @@
+
+
+
+docker run --name mysql -d -v c:/docker/mysql/conf:/etc/mysql/conf.d -v c:/docker/mysql/data:/var/lib/mysql -p 3306:3306 -e MYSQL_DATABASE=keycloak -e MYSQL_ROOT_PASSWORD=root mysql:5.7
+
+
+#登陆mysql数据库    
+docker exec -it mysql mysql -uroot -proot
+
+
+-- 实现远程连接
+grant all privileges on *.* to 'root'@'%' identified by 'root' with grant option; 
+
+flush privileges; 
+
+
+docker run -d -p 8010:8080 --name keycloak -v c:/docker/keycloak/themes:/opt/jboss/keycloak/themes -e TZ=Asia/Shanghai -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -e DB_VENDOR=mysql -e DB_USER=root -e DB_PASSWORD=root -e DB_ADDR=192.168.1.100 -e DB_PORT=3306 -e DB_DATABASE=keycloak -e JDBC_PARAMS='connectTimeout=30&useSSL=false&serverTimezone=UTC' jboss/keycloak
